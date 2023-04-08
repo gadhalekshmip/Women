@@ -29,10 +29,16 @@ export default function Login({ navigation }) {
                   <Text style={styles.buttonText}>Login</Text>
                   <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
                 </TouchableOpacity>
+                <View style={styles.orContainer}>
+                <View style={styles.orLine} />
+                <Text style={styles.orText}>or</Text>
+                <View style={styles.orLine} />
+              </View>
 
-            <View style={styles.rememberMeContainer}>
-              <Text style={styles.rememberMeText}>Remember Me</Text>
+            <View style={styles.googleSignInButtonContainer}>
+              
               <TouchableOpacity style={styles.googleSignInButton}>
+              <Image source={require('../assets/images/google.png')} style={styles.googleIcon} />
                 <Text style={styles.googleSignInButtonText}>Sign in with Google</Text>
               </TouchableOpacity>
              </View>
@@ -108,7 +114,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: 109,
     height: 40,
-    left: 100,
+    left: 133,
     top: -40,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Arial",
     fontWeight: "400",
@@ -123,7 +129,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent:'center',
     alignItems: 'center',
-    margin:30,
+    margin:10,
+    marginBottom:-5,
   },
   buttonText: {
     color: 'white',
@@ -136,39 +143,54 @@ const styles = StyleSheet.create({
     borderRadius:15
   },
   forgotPasswordText: {
-    color: '#007AFF',
+    color: 'darkblue',
     fontSize: 14,
     textAlign: 'right',
     marginBottom: 10,
   },
-  rememberMeContainer: {
+  googleSignInButtonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius:5,
+    width: 300,
+    height:40,
+    left:25,
+    
   },
- // rememberMeContainer: {
-   // backgroundColor: 'transparent',
-   // borderWidth: 0,
-   // paddingLeft: 0,
-   // marginLeft: 0,
-   // marginRight: 0,
-  //},
-  rememberMeText: {
-    fontSize: 14,
-    color: '#FFFFFF',
-    marginRight: 10,
-  },
+ 
   googleSignInButton: {
     backgroundColor: 'rgba(255, 255, 255, 0.6)"',
     paddingVertical: 10,
-    borderRadius: 5,
+    borderRadius: 300,
     alignItems: 'center',
     flex: 1,
-    marginLeft: 10,
+    marginLeft: 5,
+    marginRight:5,
   },
   googleSignInButtonText: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: 10,
+  },
+  orContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  orLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: 'black',
+    marginVertical: 10,
+  },
+  orText: {
+    marginHorizontal: 10,
+    color: 'black',
+  },
+  googleIcon: {
+    width: 20,
+    height: 20,
+    marginRight: 10,
   },
 });
  
