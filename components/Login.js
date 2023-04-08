@@ -22,13 +22,14 @@ export default function Login({ navigation }) {
           {/*login*/}
           <View style={styles.transparentBox}>
             <View style={styles.formContainer}>
-            <Text style={styles.text2}>Login</Text>
+                <Text style={styles.text2}>Login</Text>
                 <TextInput style={styles.input} placeholder="Username" value={username} onChangeText={setUsername} />
                 <TextInput style={styles.input} placeholder="Password" secureTextEntry value={password}  onChangeText={setPassword}  />
                 <TouchableOpacity style={styles.button} onPress={handleLogin}>
-              <Text style={styles.buttonText}>Login</Text>
-            </TouchableOpacity>
-            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+                  <Text style={styles.buttonText}>Login</Text>
+                  <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+                </TouchableOpacity>
+
             <View style={styles.rememberMeContainer}>
               <Text style={styles.rememberMeText}>Remember Me</Text>
               <TouchableOpacity style={styles.googleSignInButton}>
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   formContainer: {
-    width: "80%",
+    width: "100%",
     marginTop: 50,
   },
   input: {
@@ -118,15 +119,21 @@ const styles = StyleSheet.create({
 
 
   button: {
-    backgroundColor: '#007AFF',
-    paddingVertical: 10,
+    flexDirection:'column',
     borderRadius: 5,
+    justifyContent:'center',
     alignItems: 'center',
-    marginBottom: 10,
+    margin:30,
   },
   buttonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
+    color: 'white',
+    backgroundColor:'blue',
+    height:40,
+    width:300,
+    fontSize: 20,
+    paddingTop:5,
+    textAlign:'center',
+    borderRadius:15
   },
   forgotPasswordText: {
     color: '#007AFF',
