@@ -1,35 +1,16 @@
 import React from 'react';
 import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import { Card, IconButton, Title, Divider,Text } from 'react-native-paper';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
-
-const Home = () => {
+const HomeTab = () => {
   return (
     
-    <ScrollView style={styles.container}>
-      <View style={styles.headerContainer}>
-      <View style={styles.wsafeLogo}>
-          <Image source={require('../assets/images/logo.png')} style={styles.wsafeLogoImage} />
-          <Text style={styles.wsafeLogoText}>Wsafe</Text>
-        </View>
-        <View style={styles.headerIconContainer}>    
-          <View style={styles.headerIcon}>
-            <IconButton icon="home" size={40}  />
-            <Text style={styles.headerIconTitle}>Home</Text>
-          </View>
-          <View style={styles.headerIcon}>
-            <IconButton icon="chat" size={40} onPress={() => {}} />
-            <Text style={styles.headerIconTitle}>Chats</Text>
-          </View>
-          <View style={styles.headerIcon}>
-            <IconButton icon="account-multiple" size={40} onPress={() => {}} />
-            <Text style={styles.headerIconTitle}>Counsel</Text>
-          </View>
-        </View>
-      </View>
+      <ScrollView style={styles.container}>
       <View style={{flex:1}}>
-      <Image source={require('../assets/images/empower_women.png')}style={styles.image} resizeMode="cover" />
-      <Text style={styles.text1}>Empower Yourself</Text>
+        <Image source={require('../assets/images/empower_women.png')}style={styles.image} resizeMode="cover" />
+        <Text style={styles.text1}>Empower Yourself</Text>
       </View>
        <Card style={styles.cardContainer} >
         <Card.Title title="Quick Contacts" />
@@ -75,7 +56,67 @@ const Home = () => {
           </View>
       </View>
       </Card>
+      <View style={{flex:1}}>
+        <Image source={require('../assets/images/empower_women.png')}style={styles.image} resizeMode="cover" />
+        <Text style={styles.text1}>Empower Yourself</Text>
+      </View>
+      <View style={{flex:1}}>
+        <Image source={require('../assets/images/empower_women.png')}style={styles.image} resizeMode="cover" />
+        <Text style={styles.text1}>Empower Yourself</Text>
+      </View>
     </ScrollView>
+  
+  );
+};
+
+const ChatsTab = () => {
+  return (
+    <View style={{ flex: 1 }}>
+      
+    </View>
+  );
+};
+
+const CounselTab = () => {
+  return (
+    <View style={{ flex: 1 }}>
+      
+    </View>
+  );
+};
+const Tab = createMaterialTopTabNavigator();
+
+const Home = () => {
+  return (
+    /*<View style={styles.headerContainer}>
+      <View style={styles.wsafeLogo}>
+        <Image source={require('../assets/images/logo.png')} style={styles.wsafeLogoImage} />
+        <Text style={styles.wsafeLogoText}>Wsafe</Text>
+  </View>*/
+    <NavigationContainer independent={true} style= {styles.headerContainer}>
+    <Tab.Navigator screenOptions={{
+            tabBarItemStyle: { flexDirection:"row",justifyContent: "center",marginBottom:15  },
+            tabBarStyle: { backgroundColor: "#FFA9D2"  }  
+        
+            }}  >
+      <Tab.Screen name="Home" component={HomeTab}  options={{
+                tabBarLabel:'Home',
+                tabBarIcon: ({ color }) => (  <IconButton icon="home" size={30} color={color} />),
+              }} />
+      <Tab.Screen name="Chats" component={ChatsTab}  options={{
+                tabBarLabel:'Chat',
+                tabBarIcon: ({ color }) => (  <IconButton icon="chat" size={30} color={color} />),
+              }} /> 
+      <Tab.Screen name="Counsel" component={CounselTab}  options={{
+                tabBarLabel:'Counsel',
+                 tabBarIcon: ({ color }) => ( <IconButton icon="account-multiple" size={30} color={color} />),
+              }} />
+    </Tab.Navigator>
+  </NavigationContainer>
+ 
+
+
+    
   );
 };
 
@@ -179,6 +220,7 @@ const styles = StyleSheet.create({
   wsafeLogo: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginRight: 20,
   },
   wsafeLogoImage: {
     width: 30,
@@ -188,6 +230,7 @@ const styles = StyleSheet.create({
   wsafeLogoText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: 'white',
   },
 });
 

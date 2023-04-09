@@ -82,10 +82,12 @@ const styles = StyleSheet.create({
     fontSize: 40,
     lineHeight: 49,
     color: "#FFFFFF",
+    zIndex:10,
   },
   formContainer: {
     width: "100%",
     marginTop: 50,
+   // zIndex:30,
   },
   input: {
     height: 40,
@@ -101,16 +103,16 @@ const styles = StyleSheet.create({
   },
   transparentBox: {
     backgroundColor: "rgba(255, 255, 255, 0.6)",
-
     width: 350,
     height: 450,
     left: 0,
     top: 100,
     opacity: 0.7,
     borderRadius: 10,
+    elevation:30,
   },
   text2: {
-    // Added styles for the text component
+    
     position: "absolute",
     width: 109,
     height: 40,
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin:10,
     marginBottom:-5,
-    zIndex:30,
+    elevation:30
   },
   buttonText: {
     color: 'white',
