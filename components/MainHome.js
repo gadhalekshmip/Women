@@ -95,7 +95,8 @@ const Home = () => {
   </View>*/
     <NavigationContainer independent={true} style= {styles.headerContainer}>
     <Tab.Navigator screenOptions={{
-            tabBarItemStyle: { flexDirection:"row",justifyContent: "center",marginBottom:15  },
+            tabBarItemStyle: { flexDirection:"row",justifyContent: "space-between",marginBottom:15,paddingHorizontal: 18,  
+            paddingTop: 5    },
             tabBarStyle: { backgroundColor: "#FFA9D2"  }  
         
             }}  >
