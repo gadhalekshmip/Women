@@ -3,7 +3,11 @@ import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import { Card, IconButton, Title, Divider,Text } from 'react-native-paper';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import MessageScreen from './MessageScreen';
+import ChatScreen from './ChatScreen';
 
+const Stack = createNativeStackNavigator();
 const HomeTab = () => {
   return (
     
@@ -71,9 +75,12 @@ const HomeTab = () => {
 
 const ChatsTab = () => {
   return (
-    <View style={{ flex: 1 }}>
-      
-    </View>
+    <Stack.Navigator >
+      <Stack.Screen name="Messages" component={MessageScreen} options={{ headerShown: false, headerBackTitleVisible: false }}  />
+     <Stack.Screen name ="Chat" component={ChatScreen} options={({route}) => ({
+        headerTitle: route.params.userName, headerTitleAlign: 'center'
+      })}/>
+    </Stack.Navigator>
   );
 };
 
@@ -95,10 +102,9 @@ const Home = () => {
   </View>*/
     <NavigationContainer independent={true} style= {styles.headerContainer}>
     <Tab.Navigator screenOptions={{
-            tabBarItemStyle: { flexDirection:"row",justifyContent: "space-between",marginBottom:15,paddingHorizontal: 18,  
+            tabBarItemStyle: { flexDirection:"row",justifyContent: "space-between",marginBottom:10,marginTop:10,  
             paddingTop: 5    },
-            tabBarStyle: { backgroundColor: "#FFA9D2"  }  
-        
+            tabBarStyle: { backgroundColor: "#FFA9D2"  }  ,
             }}  >
       <Tab.Screen name="Home" component={HomeTab}  options={{
                 tabBarLabel:'Home',
@@ -116,8 +122,6 @@ const Home = () => {
   </NavigationContainer>
  
 
-
-    
   );
 };
 
