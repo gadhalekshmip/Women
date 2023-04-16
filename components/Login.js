@@ -11,13 +11,15 @@ export default function Login({ navigation }) {
     
     navigation.navigate('MainHome');
   };
+  const handleForgot=() =>{
 
+  };
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../assets/images/back.png')} style={styles.backgroundImage}>
         <View style={styles.overlayContainer}>
           <Image source={require('../assets/images/logo.png')} style={styles.overlayImage} />
-          <Text style={styles.text}>W safe</Text>
+          <Text style={styles.text}>W safe </Text>
 
           {/*login*/}
           <View style={styles.transparentBox}>
@@ -26,7 +28,9 @@ export default function Login({ navigation }) {
                 <TextInput style={styles.input} placeholder="Username" value={username} onChangeText={setUsername} />
                 <TextInput style={styles.input} placeholder="Password" secureTextEntry value={password}  onChangeText={setPassword}  />
                 <TouchableOpacity style={styles.button} onPress={handleLogin}>
-                  <Text style={styles.buttonText}>Login</Text>
+                  <Text style={styles.buttonText}>Login</Text>     
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={handleForgot}>
                   <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
                 </TouchableOpacity>
                 <View style={styles.orContainer}>

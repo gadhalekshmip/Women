@@ -47,7 +47,7 @@ const Messages = [
 
 const MessagesScreen = ({navigation}) => {
     return (
-      <Container>
+      <Container style={styles.container}>
         <FlatList 
           data={Messages}
           keyExtractor={item=>item.id}
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, 
     alignItems: 'center', 
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor:'rgba(255, 169, 210, 0.2)',
   },
 });

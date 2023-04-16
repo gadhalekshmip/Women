@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import MessageScreen from './MessageScreen';
 import ChatScreen from './ChatScreen';
+import YouTubeLinksScreen from './YouTubeLinksScreen';
 
 const Stack = createNativeStackNavigator();
 const HomeTab = () => {
@@ -78,7 +79,7 @@ const ChatsTab = () => {
     <Stack.Navigator >
       <Stack.Screen name="Messages" component={MessageScreen} options={{ headerShown: false, headerBackTitleVisible: false }}  />
      <Stack.Screen name ="Chat" component={ChatScreen} options={({route}) => ({
-        headerTitle: route.params.userName, headerTitleAlign: 'center'
+        headerTitle: route.params.userName, headerTitleAlign: 'center' ,headerBackTitleVisible: false,
       })}/>
     </Stack.Navigator>
   );
@@ -86,14 +87,22 @@ const ChatsTab = () => {
 
 const CounselTab = () => {
   return (
-    <View style={{ flex: 1 }}>
-      
-    </View>
+   <YouTubeLinksScreen  />
   );
 };
 const Tab = createMaterialTopTabNavigator();
 
-const Home = () => {
+const MainHome = () => {
+ /* const getTabBarVisibility = (route) => {
+    const routeName = route.state
+      ? route.state.routes[route.state.index].name
+      : '';
+
+    if (routeName === 'Chat') {
+      return false;
+    }
+    return true;
+  };*/
   return (
     /*<View style={styles.headerContainer}>
       <View style={styles.wsafeLogo}>
@@ -110,10 +119,12 @@ const Home = () => {
                 tabBarLabel:'Home',
                 tabBarIcon: ({ color }) => (  <IconButton icon="home" size={30} color={color} />),
               }} />
-      <Tab.Screen name="Chats" component={ChatsTab}  options={{
+      <Tab.Screen name="Chats" component={ChatsTab}  options={({route})=>({
+                /*tabBarVisible : getTabBarVisibility(route),*/
                 tabBarLabel:'Chat',
                 tabBarIcon: ({ color }) => (  <IconButton icon="chat" size={30} color={color} />),
-              }} /> 
+               
+              })} /> 
       <Tab.Screen name="Counsel" component={CounselTab}  options={{
                 tabBarLabel:'Counsel',
                  tabBarIcon: ({ color }) => ( <IconButton icon="account-multiple" size={30} color={color} />),
@@ -129,6 +140,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
+  },
+  bgcolor:{
+    backgroundColor:'rgba(255, 169, 210, 0.2)'
   },
   text1:{
       position: 'absolute',
@@ -239,4 +253,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default MainHome;
