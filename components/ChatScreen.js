@@ -12,7 +12,7 @@ const ChatScreen = ({ route }) => {
   );
 };
 
-
+export default ChatScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     marginVertical: 16,
   },
 });
-export default ChatScreen;
+

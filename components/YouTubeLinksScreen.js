@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Image, Text, StyleSheet, Linking, FlatList } from 'react-native';
 
-const ChatScreen = () => {
+const YouTubeLinksScreen = () => {
   // Data for the list of YouTube video links
   const youtubeLinks = [
     { id: 1, title: 'Women SAFETY Gadgets & Apps - Highly Recommended | TechBar', link: 'https://youtu.be/iHxzsAkN98U' },
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ChatScreen;
+export default YouTubeLinksScreen;

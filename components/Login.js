@@ -30,9 +30,9 @@ export default function Login({ navigation }) {
                 <TouchableOpacity style={styles.button} onPress={handleLogin}>
                   <Text style={styles.buttonText}>Login</Text>     
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={handleForgot}>
+               {/* <TouchableOpacity style={styles.button} onPress={handleForgot}>
                   <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-                </TouchableOpacity>
+                </TouchableOpacity>*/}
                 <View style={styles.orContainer}>
                 <View style={styles.orLine} />
                 <Text style={styles.orText}>or</Text>
