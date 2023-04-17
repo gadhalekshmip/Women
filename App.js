@@ -11,7 +11,7 @@ import MessageScreen from "./components/MessageScreen";
 import YouTubeLinksScreen from "./components/YouTubeLinksScreen";
 import BookCabScreen from "./components/BookCabScreen";
 import Home2 from "./components/Home2";
-import MainStack from "./components/MainStack";
+
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="MainHome" component={MainHome} />
-        <Stack.Screen name="MainStack" component={MainStack} />
+       
         <Stack.Screen name="Home2" component={Home2}  />
         <Stack.Screen name= "MessageScreen" component={MessageScreen}  />
         <Stack.Screen name= "YouTubeLinksScreen" component={YouTubeLinksScreen} />

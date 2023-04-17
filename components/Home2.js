@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 const Home2 = () => {
     const navigation = useNavigation();
     const handleTap = () => {
-        navigation.navigate('BookCabScreen');
+        navigation.push('BookCabScreen');
 
       };
     return (
