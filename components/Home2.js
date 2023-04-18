@@ -3,14 +3,17 @@ import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import { Card, IconButton,  Divider,Text } from 'react-native-paper';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BookCabScreen from './BookCabScreen';
+import CallCounsel from './CallCounsel';
 import { useNavigation } from '@react-navigation/native';
 const Stack = createNativeStackNavigator();
 
 const Home2 = () => {
     const navigation = useNavigation();
     const handleTap = () => {
-        navigation.push('BookCabScreen');
-
+        navigation.push('BookCabScreen')
+      };
+    const handleTap2 = () => {
+        navigation.push('CallCounsel')
       };
     return (
       
@@ -67,7 +70,7 @@ const Home2 = () => {
               <Text style={styles.otherServiceTitle}>Book a Cab</Text>
             </View>
             <View style={styles.contactIcon}>
-              <IconButton icon="phone" color="#000"size={40} onPress={() => {  }} />
+              <IconButton icon="phone" color="#000"size={40} onPress={() => { handleTap2 }} />
               <Text style={styles.otherServiceTitle}>Call for Counselling</Text>
             </View>
         </View>

@@ -11,6 +11,8 @@ import MessageScreen from "./components/MessageScreen";
 import YouTubeLinksScreen from "./components/YouTubeLinksScreen";
 import BookCabScreen from "./components/BookCabScreen";
 import Home2 from "./components/Home2";
+import CallCounsel from "./components/CallCounsel";
+import { ScreenStackHeaderLeftView } from "react-native-screens";
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
         <Stack.Screen name= "MessageScreen" component={MessageScreen}  />
         <Stack.Screen name= "YouTubeLinksScreen" component={YouTubeLinksScreen} />
         <Stack.Screen name="BookCabScreen" component={BookCabScreen} /> 
+        <Stack.Screen name="CallCounsel" component={CallCounsel} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

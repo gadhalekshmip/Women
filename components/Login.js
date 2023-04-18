@@ -11,9 +11,7 @@ export default function Login({ navigation }) {
     
     navigation.navigate('MainHome');
   };
-  const handleForgot=() =>{
 
-  };
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../assets/images/back.png')} style={styles.backgroundImage}>
